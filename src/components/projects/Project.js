@@ -71,7 +71,10 @@ function Project({ name, description, img, link }) {
           </small>
         </div>
         <div className='img'>
-          <img src={imgData} alt='finpal' />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/${img}.jpg`}
+            alt='finpal'
+          />
         </div>
       </motion.div>
     </a>
