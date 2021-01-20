@@ -1,24 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Project.css';
 import { motion } from 'framer-motion';
+import {
+  finpal,
+  spotify,
+  spotifyfirst,
+  amazon,
+  miniprojects,
+} from '../../imgs/index';
 
 function Project({ name, description, img, link }) {
-  const [imgSrc, setImgSrc] = useState(null);
-  console.log(img + '>>' + imgSrc);
+  let imgData = {};
+  let imgSrc = {};
 
-  useEffect(() => {
-    if (img === 'finpal') {
-      setImgSrc('/static/media/finpal.ddf4f35c.jpg');
-    } else if (img === 'spotify') {
-      setImgSrc('/static/media/spotify.6e067b8d.jpg');
-    } else if (img === 'spotifyfirst') {
-      setImgSrc('/static/media/spotifyfirst.4bf9192f.jpg');
-    } else if (img === 'amazon') {
-      setImgSrc('/static/media/amazon.e319170f.jpg');
-    } else if (img === 'miniprojects') {
-      setImgSrc('/static/media/miniprojects.699f4ace.jpg');
-    }
-  });
+  if (img === 'finpal') {
+    imgSrc = { finpal };
+    imgData = imgSrc.finpal;
+  } else if (img === 'spotify') {
+    imgSrc = { spotify };
+    imgData = imgSrc.spotify;
+  } else if (img === 'spotifyfirst') {
+    imgSrc = { spotifyfirst };
+    imgData = imgSrc.spotifyfirst;
+  } else if (img === 'amazon') {
+    imgSrc = { amazon };
+    imgData = imgSrc.amazon;
+  } else if (img === 'miniprojects') {
+    imgSrc = { miniprojects };
+    imgData = imgSrc.miniprojects;
+  }
 
   const projectVariants = {
     initial: {
@@ -42,7 +52,7 @@ function Project({ name, description, img, link }) {
   };
 
   return (
-    <a className='projectLink' href={link} target='_blank' rel='no-referrer'>
+    <a className='projectLink' href={link} target='_blank' rel='noreferrer'>
       <motion.div
         className='project'
         variants={projectVariants}
@@ -55,13 +65,13 @@ function Project({ name, description, img, link }) {
           <p>{description}</p>
           <small>
             Link to app:{' '}
-            <a className='link' href={link} target='_blank' rel='no-referrer'>
+            <a className='link' href={link} target='_blank' rel='noreferrer'>
               {name}
             </a>
           </small>
         </div>
         <div className='img'>
-          <img src={imgSrc} alt='finpal' />
+          <img src={imgData} alt='finpal' />
         </div>
       </motion.div>
     </a>

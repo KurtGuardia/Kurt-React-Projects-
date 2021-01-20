@@ -1,5 +1,5 @@
-export { default as Finpal } from './finpal.jpg';
-export { default as Spotify } from './spotify.jpg';
-export { default as SpotifyFirst } from './spotifyfirst.jpg';
-export { default as Amazon } from './amazon.jpg';
-export { default as Miniprojects } from './miniprojects.jpg';
+export { default as finpal } from './finpal.jpg';
+export { default as spotify } from './spotify.jpg';
+export { default as spotifyfirst } from './spotifyfirst.jpg';
+export { default as amazon } from './amazon.jpg';
+export { default as miniprojects } from './miniprojects.jpg';
