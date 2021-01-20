@@ -1,15 +1,10 @@
-import React, { createElement, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Project.css';
 import { motion } from 'framer-motion';
-import finpal from '../../imgs/finpal.jpg';
-import spotify from '../../imgs/spotify.jpg';
-import amazon from '../../imgs/amazon.jpg';
-import spotifyfirst from '../../imgs/spotifyfirst.jpg';
-import miniprojects from '../../imgs/miniprojects.jpg';
 
 function Project({ name, description, img, link }) {
   const [imgSrc, setImgSrc] = useState(null);
-  console.log(finpal);
+  console.log(img + '>>' + imgSrc);
 
   useEffect(() => {
     if (img === 'finpal') {
@@ -23,7 +18,7 @@ function Project({ name, description, img, link }) {
     } else if (img === 'miniprojects') {
       setImgSrc('/static/media/miniprojects.699f4ace.jpg');
     }
-  }, []);
+  });
 
   const projectVariants = {
     initial: {
@@ -47,22 +42,29 @@ function Project({ name, description, img, link }) {
   };
 
   return (
-    <motion.div
-      className='project'
-      variants={projectVariants}
-      initial='initial'
-      animate='animate'
-      whileHover='hover'
-    >
-      <div className='text'>
-        <h2>{name}</h2>
-        <p>{description}</p>
-        <small>{link}</small>
-      </div>
-      <div className='img'>
-        <img src={imgSrc} alt='finpal' />
-      </div>
-    </motion.div>
+    <a className='projectLink' href={link} target='_blank' rel='no-referrer'>
+      <motion.div
+        className='project'
+        variants={projectVariants}
+        initial='initial'
+        animate='animate'
+        whileHover='hover'
+      >
+        <div className='text'>
+          <h2>{name}</h2>
+          <p>{description}</p>
+          <small>
+            Link to app:{' '}
+            <a className='link' href={link} target='_blank' rel='no-referrer'>
+              {name}
+            </a>
+          </small>
+        </div>
+        <div className='img'>
+          <img src={imgSrc} alt='finpal' />
+        </div>
+      </motion.div>
+    </a>
   );
 }
 

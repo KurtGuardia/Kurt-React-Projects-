@@ -68,3 +68,8 @@ body::-webkit-scrollbar-thumb:active {
   width: 60%;
   letter-spacing: 1px;
 }
+
+*::selection {
+  background-color: transparent;
+  color: #424242;
+}

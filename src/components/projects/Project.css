@@ -1,3 +1,7 @@
+.projectLink {
+  text-decoration: none;
+}
+
 .project {
   padding: 1rem 2rem;
   margin: 0 0 3rem;
@@ -21,6 +25,9 @@
 .project:hover .img {
   filter: blur(0);
 }
+.project:hover .text .link {
+  font-size: 22px;
+}
 
 .project .text h2 {
   color: #fff0e0;
@@ -29,6 +36,18 @@
 .project .text p {
   margin: 2rem;
   position: relative;
+
+  color: #eee;
+}
+.project .text small {
+  color: #eee;
+}
+.project .text .link {
+  color: rgb(41, 189, 194);
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.8s;
 }
 
 .project .img {
