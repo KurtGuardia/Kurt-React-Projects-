@@ -60,14 +60,11 @@ body::-webkit-scrollbar-thumb:active {
   text-align: center;
 }
 
-.App .title span {
+.App .title div {
   color: #fff0e0;
 }
 
 .App .title p {
   width: 60%;
-}
-
-.App .container {
-  /* display: flex; */
+  letter-spacing: 1px;
 }

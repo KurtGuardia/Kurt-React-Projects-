@@ -3,6 +3,7 @@
   margin: 0 0 3rem;
   border-radius: 15px;
   display: flex;
+  align-items: center;
   background: linear-gradient(
       to left,
       rgba(255, 255, 255, 0.15) 0%,
@@ -17,13 +18,24 @@
   background-blend-mode: multiply, multiply;
 }
 
+.project:hover .img {
+  filter: blur(0);
+}
+
+.project .text h2 {
+  color: #fff0e0;
+}
+
 .project .text p {
   margin: 2rem;
   position: relative;
 }
 
 .project .img {
-  width: 40vw;
+  min-width: 33%;
+  max-width: 33%;
+  filter: blur(5px);
+  transition: 0.5s;
 }
 
 .project .img img {

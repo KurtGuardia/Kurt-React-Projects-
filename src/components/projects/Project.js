@@ -14,7 +14,7 @@ const Project = ({ name, description, img, link }) => {
         type: 'spring',
         stiffness: 65,
         duration: 1,
-        delay: 0.5,
+        delay: 1,
       },
     },
     hover: {
@@ -34,7 +34,7 @@ const Project = ({ name, description, img, link }) => {
       whileHover='hover'
     >
       <div className='text'>
-        <h3>{name}</h3>
+        <h2>{name}</h2>
         <p>{description}</p>
         <small>{link}</small>
       </div>
