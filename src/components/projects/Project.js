@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { createElement, useEffect, useState } from 'react';
 import './Project.css';
-import { Finpal } from '../../imgs';
 import { motion } from 'framer-motion';
+import finpal from '../../imgs/finpal.jpg';
+import spotify from '../../imgs/spotify.jpg';
+import amazon from '../../imgs/amazon.jpg';
+import spotifyfirst from '../../imgs/spotifyfirst.jpg';
+import miniprojects from '../../imgs/miniprojects.jpg';
 
-const Project = ({ name, description, img, link }) => {
+function Project({ name, description, img, link }) {
+  const [imgSrc, setImgSrc] = useState(null);
+  console.log(finpal);
+
+  useEffect(() => {
+    if (img === 'finpal') {
+      setImgSrc('/static/media/finpal.ddf4f35c.jpg');
+    } else if (img === 'spotify') {
+      setImgSrc('/static/media/spotify.6e067b8d.jpg');
+    } else if (img === 'spotifyfirst') {
+      setImgSrc('/static/media/spotifyfirst.4bf9192f.jpg');
+    } else if (img === 'amazon') {
+      setImgSrc('/static/media/amazon.e319170f.jpg');
+    } else if (img === 'miniprojects') {
+      setImgSrc('/static/media/miniprojects.699f4ace.jpg');
+    }
+  }, []);
+
   const projectVariants = {
     initial: {
       x: '-100vw',
@@ -39,10 +60,10 @@ const Project = ({ name, description, img, link }) => {
         <small>{link}</small>
       </div>
       <div className='img'>
-        <img src={Finpal} alt='finpal' />
+        <img src={imgSrc} alt='finpal' />
       </div>
     </motion.div>
   );
-};
+}
 
 export default Project;
