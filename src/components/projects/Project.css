@@ -22,9 +22,6 @@
   background-blend-mode: multiply, multiply;
 }
 
-.project:hover .img {
-  filter: blur(0);
-}
 .project:hover .text .link {
   font-size: 22px;
 }
@@ -36,12 +33,13 @@
 .project .text p {
   margin: 2rem;
   position: relative;
-
   color: #eee;
 }
+
 .project .text small {
   color: #eee;
 }
+
 .project .text .link {
   color: rgb(41, 189, 194);
   letter-spacing: 2px;
@@ -53,11 +51,43 @@
 .project .img {
   min-width: 33%;
   max-width: 33%;
-  filter: blur(5px);
   transition: 0.5s;
+}
+
+.project:hover.img {
+  filter: blur(0);
+}
+
+@media (hover: hover) {
+  .project .img {
+    filter: blur(5px);
+  }
 }
 
 .project .img img {
   width: 100%;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 1400px) {
+  .project .text h2 {
+    margin: 1rem 0;
+  }
+  .project .text p {
+    margin: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .project {
+    flex-direction: column;
+  }
+  .project .img {
+    max-width: 60%;
+    align-self: flex-end;
+    margin-top: 1rem;
+  }
+  .project .text p {
+    margin: 0.5rem 0 1.5rem;
+  }
 }

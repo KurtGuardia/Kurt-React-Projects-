@@ -44,8 +44,11 @@ body::-webkit-scrollbar-thumb:active {
 
 .App {
   font-size: larger;
-  margin: 3rem 20rem;
+  margin: 3rem;
   color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .App .title {
@@ -69,7 +72,38 @@ body::-webkit-scrollbar-thumb:active {
   letter-spacing: 1px;
 }
 
+.App .container {
+  width: 80%;
+}
+
 *::selection {
   background-color: transparent;
   color: #424242;
+}
+
+@media screen and (max-width: 1400px) {
+  .App .title {
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .App .title p {
+    width: 90%;
+  }
+  .App .title h1 {
+    margin: 0;
+  }
+  .App .container {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .App .container {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 800px) {
+  body {
+    font-size: large;
+  }
 }
